@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>网易云资料查询</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="wrap">
+			<div class="header">
+				<div class="hd w">
+					<h1>网易云资料查询</h1><input type="text" placeholder="输入用户ID" v-model="userID"
+						@keyup.enter="getUserInfo(userID)">
+				</div>
+			</div>
+			<br>
+
+			<!-- 用户信息栏 -->
+			<div class="user-info w clearfix">
+				<!-- <h3>用户信息</h3> -->
+				<!-- avatar -->
+				<img :src="userInfo.profile.avatarUrl" alt="点获取" width="225px" height="225px">
+				<div class="info" v-show="isInfoShow">
+					<ul>
+						<li class="user-name"><a
+								:href="'https://music.163.com/#/user/home?id='+userID">{{userInfo.profile.nickname}}</a>
+						</li>
+						<li>听了：<strong>{{userInfo.listenSongs}}</strong> 首曲子</li>
+						<li>签名：<span>{{userInfo.profile.signature}}</li>
+					</ul>
+					<p></p>
+					<p></p>
+					<p></span></p>
+				</div>
+			</div>
+
+			<br>
+			<!-- 收听列表栏 -->
+			<div class="user-play-his w">
+				<h2>听歌排行</h2>
+				<div class="thisWeek">
+					<!-- <div class="left" v-for="(songName,index) in userRecordWeek.name">
+						<ul>
+							<li>{{index+1}}. <span>{{songName}}</span> -</li>
+						</ul>
+					</div>
+					<div class="right" v-for="artist in userRecordWeek.artists">
+						<ul>
+							<li>{{artist}}</li>
+						</ul>
+					</div> -->
+					<table>
+						<thead></thead>
+						<tbody>
+							<tr v-for="(key,value,index) in userRecordWeek">
+								<td>{{index+1}}.</td>
+								<td>{{key}}</td>
+								<td>{{value}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+			</div>
+			<!-- 用户歌单 -->
+			<div class="user-playlists w">
+				<h2>Ta的歌单</h2>
+				<div class="playlists">
+					<ul>
+						<li><a v-for="(item,index) in playlists.name"
+								:href="'https://music.163.com/#/playlist?id='+ playlists.playlistId[index]">
+								<img :src="playlists.coverImgUrl[index]" alt="" width="125px" height="125px">
+								<p>{{playlists.name[index]}}</p>
+							</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 引入vue -->
+	<script src="vue.js"></script>
+	<!-- 引入axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="main.js"></script>
+
+</body>
+
+</html>

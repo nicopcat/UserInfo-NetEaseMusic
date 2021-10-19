@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .7);
+}
+
+li{
+    list-style: none;
+}
+h2{
+    border-bottom: 2px solid rgb(184, 11, 11);
+    padding: .5em 0;
+    margin-top: 1em;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+.wrap{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.w{
+    /* width: 90%; */
+    margin: 0 auto;
+}
+
+.header{
+background-color: rgb(36, 36, 36);
+}
+
+.header .hd{
+    padding: 2.5em 0;
+    padding-bottom: 4em;
+}
+
+.header h1{
+    padding: 0 1em;
+    height: 40px;
+    float: left;
+    font-size: 38px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.header input{
+    float: right;
+    margin: 1em 2em 0 0;
+    padding-left: 20px;
+    width: 300px;
+    height: 38px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .7);
+    border-radius: 19px;
+}
+
+/* 用户信息栏 */
+.user-info {
+    padding: 1.5em;
+    height: 260px;
+    border: 1px solid rgba(0, 0, 0, .7);
+}
+
+.user-info img {
+    float: left;
+}
+
+.user-info .info {
+    margin-left: 3em;
+    float: left;
+    font-size: 16;
+}
+
+.user-info .info li {
+    margin: 6px 0;
+}
+
+.user-info .info .user-name{
+    font-family: Helvetica, sans-serif;
+    margin-top: .5rem;
+    margin-bottom: 100px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(17, 3, 3,.2);
+    
+}
+
+.user-info .info .user-name a{
+    font-size: 30px;
+}
+.user-info .info .user-name a:hover{
+    color: rgba(200, 70, 37, 0.9);
+}
+
+/* 听歌排行 */
+.thisWeek{
+    margin-top: 1em;
+}
+
+.thisWeek table{
+    width: 100%;
+    margin: auto;
+}
+
+table tbody tr:hover{
+background-color: rgba(230, 112, 57, 0.2);;
+}
+
+table tbody td{
+    padding: 10px 20px;
+    font-size: 20px;
+}
+table tbody tr:nth-child(odd){
+    background-color: rgba(230, 112, 57, 0.1);
+}
+
+/* Ta的歌单 */
+.user-playlists a{
+    float: left;
+    width: 150px;
+    height: 180px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.user-playlists a:hover{
+    text-decoration: underline;
+}
